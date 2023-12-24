@@ -6,12 +6,13 @@
     "mongoose": "^8.0.3"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "name": "recipe-backend-",
   "description": "My take on a recipe website backend",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "devDependencies": {},
   "author": "",
   "license": "ISC"
