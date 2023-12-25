@@ -1,0 +1,37 @@
+[
+    {
+        "imagePath": "images/recipe1.jpg",
+        "ingredients": "2 cups flour, 1 cup sugar, 3 eggs",
+        "directions": "Mix ingredients and bake at 350°F for 30 minutes.",
+        "story": "This is a family recipe passed down for generations.",
+        "user": "ChefAlex"
+    },
+    {
+        "imagePath": "images/recipe2.jpg",
+        "ingredients": "1 lb chicken, 2 tbsp soy sauce, 1 tbsp olive oil",
+        "directions": "Marinate chicken and grill for 20 minutes.",
+        "story": "A quick and easy dinner favorite.",
+        "user": "CookingLinda"
+    },
+    {
+        "imagePath": "images/recipe3.jpg",
+        "ingredients": "3 tomatoes, 1 cucumber, 1 onion, olive oil",
+        "directions": "Chop ingredients and mix with olive oil.",
+        "story": "A fresh and healthy salad.",
+        "user": "SaladGuruRavi"
+    },
+    {
+        "imagePath": "images/recipe4.jpg",
+        "ingredients": "1 cup rice, 2 cups water, salt to taste",
+        "directions": "Boil water, add rice and simmer for 20 minutes.",
+        "story": "A staple in my everyday meals.",
+        "user": "RiceMasterMaria"
+    },
+    {
+        "imagePath": "images/recipe5.jpg",
+        "ingredients": "2 slices bread, 1 slice cheese, 2 slices ham",
+        "directions": "Assemble ingredients and grill until cheese melts.",
+        "story": "My go-to sandwich for a quick lunch.",
+        "user": "SandwichKingChen"
+    }
+]
