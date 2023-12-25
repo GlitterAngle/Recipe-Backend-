@@ -8,7 +8,7 @@ const router = Router()
 // //get your controllers and tell them what they are get put post delete
 router.get('/', getAllRecipes)
 
-router.get('/user/:user', getRecipeByUser)
+router.get('/user/:userId', getRecipeByUser)
 
 router.get('/:id', getSingleRecipe)
 
