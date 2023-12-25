@@ -50,6 +50,20 @@ const getRecipeByUser = async (req, res)=>{
 }
 
 //creat put and putting error handling
+const createOneRecipe = async (req, res)=>{
+    try {
+        const userId = req.params.user
+        const recipePayload = req.body
+        //the whole set of items i want my recipe to contain will be in the curly brackets like the above does with user: userId but since this is holding more information it will also have the payload in the currly brackets the tripple dots makes sure to spread this information through your whole Recipe model
+        const newRecipe = await Recipe.create({...recipePayload,user: userId})
+        res.status(200).json({newRecipe})
+    } catch (error) {
+        console.error('Error creating new recipe post: this message comes from your recipe controller', error)
+        res.status(404).json({
+            message: 'Error creating new recipe post'
+        })
+    }
+}
 
 //create post/edit along with error handling
 
@@ -58,5 +72,6 @@ const getRecipeByUser = async (req, res)=>{
 export {
     getAllRecipes,
     getRecipeByUser,
-    getSingleRecipe
+    getSingleRecipe,
+    createOneRecipe
 }
