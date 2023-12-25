@@ -65,13 +65,42 @@ const createOneRecipe = async (req, res)=>{
     }
 }
 
-//create post/edit along with error handling
+//create post/edit by id along with error handling
+const editRecipe = async (req, res)=>{
+    try {
+        const id = req.params.id
+        const editPayload = req.body
+        //new: true is uesed to find the recipe by its ID and update if with the new data and ensures the return of the updated document. 
+        const recipeToEdit = await Recipe.findByIdAndUpdate(id,editPayload,{new: true})
+        res.status(200).json({recipeToEdit})
+    } catch (error) {
+        console.error('Error editing your recipe: this message comes from your edit recipe')
+        res.status(500).json({
+            message: 'Error editing your recipe'
+        })
+        
+    }
+}
 
-//create delete along with error handling 
+//create delete by ID along with error handling 
+const removeRecipe = async (req, res)=>{
+    try {
+        const id = req.params.id
+        const remove = await Recipe.findByIdAndDelete(id)
+        res.status(200).json({remove})
+    } catch (error) {
+        console.error('Error removing your recipe: this message comes from your remove recipe')
+        res.status(500).json({
+            message: 'Error removing your recipe'
+        })
+    }
+}
 
 export {
     getAllRecipes,
     getRecipeByUser,
     getSingleRecipe,
-    createOneRecipe
+    createOneRecipe,
+    editRecipe,
+    removeRecipe
 }
