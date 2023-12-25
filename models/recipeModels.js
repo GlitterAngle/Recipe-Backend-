@@ -8,7 +8,8 @@ const recipeSchema = new Schema({
     ingredients: {type: String, required: true},
     directions: {type: String, required: true},
     story: {type: String},
-    user: [{type: mongoose.Schema.Types.ObjectId,ref: "User"}]
+    //this does not go in an arrray braket because the recipe can be owned by one user if multiple useres can own one recipe they it would be in array brackets
+    user: {type: mongoose.Schema.Types.ObjectId,ref: "User"}
 
 })
 

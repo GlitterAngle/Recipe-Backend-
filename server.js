@@ -5,6 +5,7 @@ import express from 'express'
 import cors from 'cors'
 
 //this is where i will import my routes 
+import recipeRoutes from './routes/recipeRoutes.js'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(cors())
 
 //routse when they are built will go here
+app.use('/api/recipes', recipeRoutes)
 
 app.listen(PORT,function(){
     console.log(`App running on ${PORT} port`)
