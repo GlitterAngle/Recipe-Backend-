@@ -1,19 +1,17 @@
-// import {Router} from 'express'
-// import {getEntries, getSingleEntry, updateEntry, newEntry, deleteEntry} from '../controller.js'
+import {Router} from 'express'
+import { getUserById, createUser} from '../controllers/userController.js'
 
-// const router = Router()
+const router = Router()
 
-// //get your controllers and tell them what they are get put post delete
-// router.get('/', getEntries)
+//get your user by id
+router.get('/:id', getUserById)
 
-// router.get('/:entryIdx', getSingleEntry)
+router.post('/:newUser', createUser)
 
-// router.post('/new', newEntry)
 
-// router.put('/:entryIdx', updateEntry)
-
+//tbd 
 // router.delete('/:entryIdx', deleteEntry)
 
 // // this is to export to the main js file 
 
-// export default router
+export default router

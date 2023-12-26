@@ -26,3 +26,4 @@ router.delete('/:id', removeRecipe)
 // // this is to export to the main js file 
 
 // export default router
+export default router

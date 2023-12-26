@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
     //define the schema for user
-    userName: {type: String, uinque: true, required: true},
-    email: {type: String, uinque: true, required: true, validate: {
+    userName: {type: String, unique: true, required: true},
+    email: {type: String, unique: true, required: true, validate: {
         validator: function(value){
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
          },
