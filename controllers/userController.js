@@ -2,6 +2,20 @@ import User from "../models/userModels.js";
 
 
 //get user by their id might comeback and make it their email idk yet
+const getAllUsers = async(req, res)=>{
+    try {
+        const allUsers = await User.find({})
+        res.status(200).json({
+            allUsers
+        })
+    } catch (error) {
+        console.error('Error in retreiving all users: this error comes from your userController')
+        res.status(500).json({
+            message: 'Error retriving all user information'
+        })
+    }
+}
+
 const getUserById = async (req, res)=>{
     
     try {
@@ -36,5 +50,6 @@ const createUser = async (req,res)=>{
 
 export {
     getUserById,
-    createUser
+    createUser,
+    getAllUsers
 }
