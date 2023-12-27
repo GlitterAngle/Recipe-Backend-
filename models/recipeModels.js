@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 
 const recipeSchema = new Schema({
     imagePath: {type: String, required: true},
+    title: {type: String, required: true},
     ingredients: {type: String, required: true},
     directions: {type: String, required: true},
     story: {type: String},

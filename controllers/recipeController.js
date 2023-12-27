@@ -38,7 +38,7 @@ const getSingleRecipe = async (req, res)=>{
 const getRecipeByUser = async (req, res)=>{
     try {
         //this will retur all recipes by that user findOne will bring only one recipe. and the populate user will allow me to put in the user name 
-        const userId = req.params.user
+        const userId = req.params.id
         const allUserRecipes = await Recipe.find({user: userId}).populate('user')
         res.status(200).json({allUserRecipes})
     } catch (error) {
@@ -52,7 +52,7 @@ const getRecipeByUser = async (req, res)=>{
 //creat put and putting error handling
 const createOneRecipe = async (req, res)=>{
     try {
-        const userId = req.params.user
+        const userId = req.params.id
         const recipePayload = req.body
         //the whole set of items i want my recipe to contain will be in the curly brackets like the above does with user: userId but since this is holding more information it will also have the payload in the currly brackets the tripple dots makes sure to spread this information through your whole Recipe model
         const newRecipe = await Recipe.create({...recipePayload,user: userId})

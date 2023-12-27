@@ -12,6 +12,7 @@ const userSchema = new Schema({
          message: 'Invalid email address format',
         },
     },
+    imagePath: {type: String, required: true}
 
 })
 
