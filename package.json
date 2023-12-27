@@ -7,7 +7,7 @@
     "nodemon": "^3.0.2"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "name": "recipe-backend-",
   "description": "My take on a recipe website backend",
