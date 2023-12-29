@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { getUserById, createUser, getAllUsers} from '../controllers/userController.js'
+import { getUserById, createUser, getAllUsers, login} from '../controllers/userController.js'
 
 const router = Router()
 
@@ -7,6 +7,8 @@ const router = Router()
 router.get ('/', getAllUsers)
 
 router.get('/:id', getUserById)
+
+router.get('/login', login)
 
 router.post('/', createUser)
 
