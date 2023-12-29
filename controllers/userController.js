@@ -3,10 +3,11 @@ import User from "../models/userModels.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 
+
 const {SECRET = "secret"} = process.env
 
 //get user by their id might comeback and make it their email idk yet
-const getAllUsers = async(req, res)=>{
+const getAllUsers = async (req, res)=>{
     try {
         const allUsers = await User.find({})
         res.status(200).json({
@@ -62,7 +63,7 @@ const login = async(req, res)=>{
         if(user){
             const result = await bcrypt.compare(req.body.password, user.password)
             if(result){
-                const token = await jwt.sign({username: user.userName}, SECRET)
+                const token = await jwt.sign({username: user.username}, SECRET)
                 res.json({token})
             } else {
                 res.status(400).json({
@@ -71,11 +72,13 @@ const login = async(req, res)=>{
             }
         }else{
             res.status(400).json({
-                error: "User doesn't exist"
+                error: `User doesn't exist`
             })
         }
     } catch (error) {
-        res.status(400).json({error})
+        res.status(400).json({
+            error: "this is where you're getting an error"
+        })
     }
 }
 

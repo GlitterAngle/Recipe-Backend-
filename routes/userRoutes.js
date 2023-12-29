@@ -1,14 +1,15 @@
 import {Router} from 'express'
 import { getUserById, createUser, getAllUsers, login} from '../controllers/userController.js'
+import { isLoggedIn } from '../controllers/middleware.js';
 
 const router = Router()
 
 //get your user by id
 router.get ('/', getAllUsers)
 
-router.get('/:id', getUserById)
+router.get('/:id', isLoggedIn, getUserById)
 
-router.get('/login', login)
+router.post('/login', login)
 
 router.post('/', createUser)
 
