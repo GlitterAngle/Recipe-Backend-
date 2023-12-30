@@ -1,11 +1,11 @@
 import {Router} from 'express'
+import { isLoggedIn } from '../controllers/middleware.js'
 import { getAllRecipes,
     getRecipeByUser,
     getSingleRecipe,
     createOneRecipe,
     editRecipe,
     removeRecipe} from '../controllers/recipeController.js'
-    import { isLoggedIn } from '../controllers/middleware.js'
 
 const router = Router()
 

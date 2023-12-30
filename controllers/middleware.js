@@ -8,9 +8,9 @@ const isLoggedIn = async (req, res, next) =>{
         //check if auth header exists
         if(req.headers.authorization){
             //parse token from header
-            const token = req.headers.authorization.split("")[1]//split the header and get the token
+            const token = req.headers.authorization.split(" ")[1]//split the header and get the token
             if(token){
-                const payload = await jwt.verify(token, provess.env.SECRET)
+                const payload = await jwt.verify(token, process.env.SECRET)
                 if(payload){
                     //store user data in request object
                     req.user = payload
@@ -25,7 +25,7 @@ const isLoggedIn = async (req, res, next) =>{
             res.status(400).json({error: 'No authorization header'})
         }
     } catch (error) {
-        res.status(400).json({error})
+        res.status(400).json({error: error.message})
     }
 }
 
