@@ -5,7 +5,7 @@ import { isLoggedIn } from '../controllers/middleware.js';
 const router = Router()
 
 //get your user by id
-router.get ('/', getAllUsers)
+router.get ('/', isLoggedIn, getAllUsers)
 
 router.get('/:id', isLoggedIn, getUserById)
 
