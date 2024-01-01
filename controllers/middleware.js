@@ -10,7 +10,7 @@ const isLoggedIn = async (req, res, next) =>{
             //parse token from header
             const token = req.headers.authorization.split(" ")[1]//split the header and get the token
             if(token){
-                const payload = await jwt.verify(token, process.env.SECRET)
+                const payload = jwt.verify(token, process.env.SECRET)
                 if(payload){
                     //store user data in request object
                     req.user = payload

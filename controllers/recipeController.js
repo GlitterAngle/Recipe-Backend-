@@ -19,7 +19,7 @@ const getAllRecipes = async (req,res) =>{
 const getSingleRecipe = async (req, res)=>{
     try {
         const id = req.params.id
-        const singleRecipe = await Recipe.findOne({_id: id})
+        const singleRecipe = await Recipe.findOne({_id: id}).populate('user', 'username')
         if(!singleRecipe){
             return res.status(404).json({message: 'Recipe not found'})
         }
