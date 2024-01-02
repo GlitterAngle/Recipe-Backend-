@@ -10,14 +10,14 @@ import { getAllRecipes,
 const router = Router()
 
 // //get your controllers and tell them what they are get put post delete
-router.get('/', isLoggedIn, getAllRecipes) //this works
+router.get('/', getAllRecipes) //this works
 
 router.get('/:id', getSingleRecipe)
 
 router.get('/user/:id', isLoggedIn, getRecipeByUser) //this works
 
 // router.post('/new', newEntry)
-router.post('/:id', isLoggedIn, createOneRecipe) //this works
+router.post('/:id', createOneRecipe) //this works
 
 // router.put('/:entryIdx', updateEntry)
 router.put('/:id', isLoggedIn, editRecipe) //this works

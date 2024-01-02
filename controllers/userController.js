@@ -43,6 +43,7 @@ const createUser = async (req,res)=>{
         //hash password
         req.body.password = await bcrypt.hash(req.body.password, 10)
         //create new user
+        console.log(req.body)
         const newUser = await User.create(req.body)
         res.status(200).json({
             newUser
@@ -55,6 +56,7 @@ const createUser = async (req,res)=>{
         })
     }
 }
+
 
 //login route to verify a user and get a toke
 const login = async(req, res)=>{
