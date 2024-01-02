@@ -10,7 +10,7 @@ import { getAllRecipes,
 const router = Router()
 
 // //get your controllers and tell them what they are get put post delete
-router.get('/', getAllRecipes) //this works
+router.get('/', isLoggedIn, getAllRecipes) //this works
 
 router.get('/:id', getSingleRecipe)
 
