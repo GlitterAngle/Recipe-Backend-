@@ -65,8 +65,13 @@ const login = async(req, res)=>{
         if(user){
             const result = await bcrypt.compare(req.body.password, user.password)
             if(result){
+                //!!!I added the uesrProfile:{_id: uer._id, username: user.username} to the response so that when it came to the front end i could then call the user id in the url of the page it's used in. this makes it easier for me to pull the user id from there to then gather all user information for the profile page
                 const token = jwt.sign({ username: user.username, userId: user._id}, SECRET)
-                res.json({token})
+                res.json({token, userProfile: {
+                    _id: user._id,
+                    username: user.username,
+                    // include other user fields as needed
+                }})
             } else {
                 res.status(400).json({
                     error: "password doesn't match"
