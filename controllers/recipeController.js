@@ -44,7 +44,7 @@ const getRecipeByUser = async (req, res)=>{
     } catch (error) {
         console.error('Error fetching all of users recipes: this message comes from your recipe controller', error)
         res.status(404).json({
-            messgage: 'Error fetching all recipes of a user:'
+            message: 'Error fetching all recipes of a user:'
         })
     }
 }

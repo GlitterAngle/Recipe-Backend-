@@ -7,7 +7,7 @@ const router = Router()
 //get your user by id
 router.get ('/', getAllUsers)
 
-router.get('/:id', getUserById)
+router.get('/:id', isLoggedIn, getUserById)
 
 router.post('/login', login)
 
