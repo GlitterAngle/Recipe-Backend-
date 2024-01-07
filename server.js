@@ -8,6 +8,7 @@ import cors from 'cors'
 
 //this is where i will import my routes 
 import recipeRoutes from './routes/recipeRoutes.js'
+import commentRoutes from './routes/commentRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 
 const app = express()
@@ -20,6 +21,7 @@ app.use(express.json())
 
 //routse when they are built will go here
 app.use('/api/recipes', recipeRoutes)
+app.use('/api/comments', commentRoutes)
 app.use('/api/user', userRoutes)
 
 app.listen(PORT,function(){
