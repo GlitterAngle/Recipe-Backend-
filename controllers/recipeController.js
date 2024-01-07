@@ -54,6 +54,9 @@ const createOneRecipe = async (req, res)=>{
     try {
         const userId = req.params.id
         const recipePayload = req.body
+        if (req.file) {
+            recipePayload.imagePath = req.file.path; // Assuming file path is what you want to store
+        }
         //the whole set of items i want my recipe to contain will be in the curly brackets like the above does with user: userId but since this is holding more information it will also have the payload in the currly brackets the tripple dots makes sure to spread this information through your whole Recipe model
         const newRecipe = await Recipe.create({...recipePayload,user: userId})
         res.status(200).json({newRecipe})

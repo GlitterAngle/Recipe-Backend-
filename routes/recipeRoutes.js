@@ -1,3 +1,4 @@
+import multer from 'multer'
 import {Router} from 'express'
 import { isLoggedIn } from '../controllers/middleware.js'
 import { getAllRecipes,
@@ -6,6 +7,8 @@ import { getAllRecipes,
     createOneRecipe,
     editRecipe,
     removeRecipe} from '../controllers/recipeController.js'
+    
+const upload = multer({dest: 'uploads/'})
 
 const router = Router()
 
@@ -17,7 +20,7 @@ router.get('/:id', isLoggedIn, getSingleRecipe)
 router.get('/user/:id', isLoggedIn, getRecipeByUser) //this works
 
 // router.post('/new', newEntry)
-router.post('/:id', isLoggedIn, createOneRecipe) //this works
+router.post('/:id', isLoggedIn, upload.single('image'), createOneRecipe) //this works
 
 // router.put('/:entryIdx', updateEntry)
 router.put('/:id', isLoggedIn, editRecipe) //this works
