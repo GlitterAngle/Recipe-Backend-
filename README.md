@@ -20,7 +20,7 @@ https://trello.com/invite/b/fsDsjqW4/ATTIe586dd7afb000d0f6dac92d5b9bc3ad744A1259
 Chapt GPT, past homeworks specifically the movies lab, youtube
 
 ## Technologies Used
-JavaScript, Mongoose, MongoDB, CORS
+JavaScript, Mongoose, MongoDB, CORS, JTW Auth
 
 ## Next Steps
 - Add images to posts
