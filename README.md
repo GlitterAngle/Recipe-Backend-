@@ -11,7 +11,7 @@ My take on a recipe website backend
 
 
 ## Deployed Link
-coming soon
+https://main--keen-sherbet-52041b.netlify.app/index.html
 
 ## Trello Board
 https://trello.com/invite/b/fsDsjqW4/ATTIe586dd7afb000d0f6dac92d5b9bc3ad744A12597/recipe-site
@@ -20,7 +20,7 @@ https://trello.com/invite/b/fsDsjqW4/ATTIe586dd7afb000d0f6dac92d5b9bc3ad744A1259
 Chapt GPT, past homeworks specifically the movies lab, youtube
 
 ## Technologies Used
-JavaScript, HTML, CSS, Axios, Mongoose, MongoDB
+JavaScript, Mongoose, MongoDB, CORS
 
 ## Next Steps
 - Add images to posts
