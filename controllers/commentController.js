@@ -18,7 +18,7 @@ const createComment = async (req, res)=>{
     try {
 
         //this gets the user id from the token
-        const userId = req.user._id
+        const userId = req.user._idç
         //this getst the recipe id from the url
         const recipeId = req.params.recipeId
         //this gets the payload from the body
